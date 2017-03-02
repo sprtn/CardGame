@@ -29,6 +29,13 @@ namespace Kortspill
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Click event of the Sort Deck button.
+        /// Replaces the current Deck with a new one, 
+        /// and removes the text from the textbox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void sortButton_Click(object sender, RoutedEventArgs e)
         {
             // Sorts the deck, arranging the cards by value and color. Ace (1) -> King (13).
@@ -36,6 +43,13 @@ namespace Kortspill
             removeText();
         }
 
+        /// <summary>
+        /// Click event of the Pull Card button. 
+        /// Deals a card from the deck and calls the writeToCardBox method,
+        /// which writes in the values into the textbox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pullCardButton_Click(object sender, RoutedEventArgs e)
         {
             // Pulls out the topmost card and takes it out of the stack
@@ -43,6 +57,11 @@ namespace Kortspill
             writeToCardBox(currentCard);
         }
 
+        /// <summary>
+        /// Uses the overwritten ToString method from Card to paste
+        /// information about the card drawn into the TextBox.
+        /// </summary>
+        /// <param name="currentCard"></param>
         private void writeToCardBox(Card currentCard)
         {
             if (currentCard != null)
@@ -53,6 +72,12 @@ namespace Kortspill
                 CardsBox.AppendText("You are out of cards. Please sort or shuffle." + Environment.NewLine);
         }
 
+        /// <summary>
+        /// Click event of the shuffle button. Calls the Shuffle function
+        /// from the deck and clears the CardsBox from text.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void shuffleStackButton_Click(object sender, RoutedEventArgs e)
         {
             // Code that shuffles the stack, placing the cards randomly
@@ -60,6 +85,9 @@ namespace Kortspill
             removeText();
         }
 
+        /// <summary>
+        /// Resets the CardsBox textbox.
+        /// </summary>
         private void removeText()
         {
             CardsBox.Text = null;
