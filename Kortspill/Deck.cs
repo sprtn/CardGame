@@ -18,7 +18,8 @@ namespace Kortspill
         public Deck()
         {
             /// <summary>
-            /// Defining all the possible faces of the cards in a string array.
+            /// Defining all the possible faces of the cards 
+            /// in a string array, Ace through King.
             /// </summary>
             string[] faces =
             {
@@ -38,7 +39,7 @@ namespace Kortspill
             };
 
             /// <summary>
-            /// Defining all the possible suits.
+            /// Defining all suits in a deck of cards.
             /// </summary>
             string[] suits = {
                 "Hearts",
@@ -50,18 +51,17 @@ namespace Kortspill
             deckOfCards = new Card[NUMBER_OF_CARDS];
             currentCard = 0;
             r = new Random();
-            for (int num = 0; num < NUMBER_OF_CARDS; num++)
-            {
-                int face = num % NUMBER_OF_CARDS_IN_SUIT;
-                int suit = num / NUMBER_OF_CARDS_IN_SUIT;
-                Console.WriteLine("{0} of {1}", faces[face], suits[suit]);
-
-                deckOfCards[num] = new Card(faces[face], suits[suit]);
-                deckOfCards[num].ToString();
-            }
-                
+            for (int i = 0; i < NUMBER_OF_CARDS; i++)
+                deckOfCards[i] = new Card(faces[i % NUMBER_OF_CARDS_IN_SUIT], suits[i / NUMBER_OF_CARDS_IN_SUIT], (i % NUMBER_OF_CARDS_IN_SUIT) + 1);
         }
 
+        /// <summary>
+        /// This Shuffle command goes through every Card in the deck
+        /// and switches it with a random card, making sure every
+        /// single card in the stack is moved at least once.
+        /// 
+        /// This ensures that the deck is sufficiently shuffled.
+        /// </summary>
         public void Shuffle()
         {
             currentCard = 0;
@@ -74,6 +74,11 @@ namespace Kortspill
             }
         }
 
+        /// <summary>
+        /// This method cycles through the stack of cards from
+        /// from position 0 in the array and all the way through.
+        /// </summary>
+        /// <returns> Returns next Card in the array or null </returns>
         public Card DealCard()
         {
             if (currentCard < deckOfCards.Length)

@@ -2,18 +2,20 @@
 {
     public class Card
     {
-        private string faces;
-        private string suits;
+        public string face;
+        public string suit;
+        public int value;
 
-        public Card (string cardFace, string cardSuit)
+        public Card (string cardFace, string cardSuit, int cardValue)
         {
-            faces = cardFace;
-            suits = cardSuit;
+            face = cardFace;
+            suit = cardSuit;
+            value = cardValue;
         }
 
         public override string ToString()
         {
-            return faces + " of " + suits;
+            return face + " of " + suit + " with a value of " + value;
         }
     }
 }
