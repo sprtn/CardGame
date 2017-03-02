@@ -68,8 +68,19 @@ namespace Kortspill
             {
                 CardsBox.AppendText(currentCard.ToString() + Environment.NewLine);
                 CardsBox.ScrollToEnd();
-            } else
-                CardsBox.AppendText("You are out of cards. Please sort or shuffle." + Environment.NewLine);
+            }
+            else
+            {
+                CardsBox.AppendText("You are out of cards. Please sort or shuffle.");
+                CanPullCards(false);
+                CardsBox.ScrollToEnd();
+            }
+        }
+
+        private void CanPullCards(bool v)
+        {
+            if (pullCardButton.IsEnabled != v)
+                pullCardButton.IsEnabled = v;
         }
 
         /// <summary>
@@ -86,11 +97,12 @@ namespace Kortspill
         }
 
         /// <summary>
-        /// Resets the CardsBox textbox.
+        /// Resets the CardsBox textbox, and enables cards to be pulled out of the stack.
         /// </summary>
         private void removeText()
         {
             CardsBox.Text = null;
+            CanPullCards(true);
         }
     }
 }
