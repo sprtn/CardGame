@@ -5,17 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kortspill"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow"
+        Height="350"
+        Width="525">
     <Grid>
         <Grid.Background>
-            <ImageBrush TileMode="Tile"/>
+            <ImageBrush TileMode="Tile" />
         </Grid.Background>
-        <Button x:Name="button" HorizontalAlignment="Left" Margin="10,277,0,0" VerticalAlignment="Top" Width="75">
-            <Button x:Name="sortButton" Content="Sort" Width="75" Click="sortButton_Click"/>
-        </Button>
-        <Button x:Name="pullCardButton" Content="Pull Card" HorizontalAlignment="Left" Margin="220,277,0,0" VerticalAlignment="Top" Width="75" Click="pullCardButton_Click"/>
-        <Button x:Name="shuffleStackButton" Content="Shuffle" HorizontalAlignment="Left" Margin="432,277,0,0" VerticalAlignment="Top" Width="75" Click="shuffleStackButton_Click"/>
-        <TextBox x:Name="CardsBox" HorizontalAlignment="Left" Height="227" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="497"/>
+        
+        <Button x:Name="sortButton"
+                HorizontalAlignment="Left"
+                Margin="10,277,0,0"
+                VerticalAlignment="Top"
+                Width="75"
+                Click="sortButton_Click"
+                Height="20"
+                Content="Sort" />
+
+        <Button x:Name="pullCardButton"
+                Content="Pull Card"
+                HorizontalAlignment="Left"
+                Margin="226,277,0,0"
+                VerticalAlignment="Top"
+                Width="75"
+                Click="pullCardButton_Click" />
+        
+        <Button x:Name="shuffleStackButton"
+                Content="Shuffle"
+                HorizontalAlignment="Left"
+                Margin="432,277,0,0"
+                VerticalAlignment="Top"
+                Width="75"
+                Click="shuffleStackButton_Click" />
+        
+        <TextBox x:Name="CardsBox"
+                 HorizontalAlignment="Left"
+                 Height="227"
+                 Margin="10,10,0,0"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 Width="497" />
+        
+        <Image x:Name="Card"
+               HorizontalAlignment="Left"
+               Height="100"
+               Margin="400,76,0,0"
+               VerticalAlignment="Top"
+               Width="71"
+               Visibility="Hidden"
+               Source="Cards/AceClubs.png" />
 
     </Grid>
 </Window>
