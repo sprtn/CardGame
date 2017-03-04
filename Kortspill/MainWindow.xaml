@@ -52,7 +52,7 @@
                Margin="400,76,0,0"
                VerticalAlignment="Top"
                Width="71"
-               Visibility="Hidden"
+               Visibility="Visible"
                Source="Cards/AceClubs.png" />
 
     </Grid>

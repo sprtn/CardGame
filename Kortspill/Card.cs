@@ -1,5 +1,6 @@
 ﻿namespace Kortspill
 {
+
     public class Card
     {
         /// <summary>
@@ -18,13 +19,18 @@
         public int value;
 
         /// <summary>
+        /// The filepath to the card's image
+        /// </summary>
+        public string imgPath;
+
+        /// <summary>
         /// The Constructor function of the Card class. 
         /// Sets the card's variables to the input values.
         /// </summary>
         /// <param name="cardFace"></param>
         /// <param name="cardSuit"></param>
         /// <param name="cardValue"></param>
-        public Card (string cardFace, string cardSuit, int cardValue)
+        public Card (string cardFace, string cardSuit, int cardValue, string filePath)
         {
             face = cardFace;
             suit = cardSuit;
