@@ -30,7 +30,7 @@
         /// <param name="cardFace"></param>
         /// <param name="cardSuit"></param>
         /// <param name="cardValue"></param>
-        public Card (string cardFace, string cardSuit, int cardValue)
+        public Card (string cardFace, string cardSuit, int cardValue, string filePath)
         {
             face = cardFace;
             suit = cardSuit;
