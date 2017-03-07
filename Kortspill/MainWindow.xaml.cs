@@ -39,7 +39,7 @@ namespace Kortspill
         private void sortButton_Click(object sender, RoutedEventArgs e)
         {
             // Sorts the deck, arranging the cards by value and color. Ace (1) -> King (13).
-            deck = new Deck();
+            deck.Sort();
             removeText();
         }
 
@@ -55,11 +55,6 @@ namespace Kortspill
             // Pulls out the topmost card and takes it out of the stack
             currentCard = deck.DealCard();
             writeToCardBox(currentCard);
-            if (Card.Visibility == Visibility.Hidden)
-                Card.Visibility = Visibility.Visible;
-            else
-                Card.Visibility = Visibility.Hidden;
-            Console.WriteLine(Card.Visibility);
         }
 
         /// <summary>

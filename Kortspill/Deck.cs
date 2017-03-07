@@ -15,14 +15,12 @@ namespace Kortspill
             NUMBER_OF_CARDS_IN_SUIT = 13;
         private Random r;
 
-        public Deck()
+        /// <summary>
+        /// Defining all the possible faces of the cards 
+        /// in a string array, Ace through King.
+        /// </summary>
+        string[] faces =
         {
-            /// <summary>
-            /// Defining all the possible faces of the cards 
-            /// in a string array, Ace through King.
-            /// </summary>
-            string[] faces =
-            {
                 "Ace",
                 "Two",
                 "Three",
@@ -38,21 +36,50 @@ namespace Kortspill
                 "King"
             };
 
-            /// <summary>
-            /// Defining all suits in a deck of cards.
-            /// </summary>
-            string[] suits = {
+        /// <summary>
+        /// Defining all suits in a deck of cards.
+        /// </summary>
+        string[] suits = {
                 "Hearts",
                 "Diamonds",
                 "Spades",
                 "Clubs"
             };
 
+        public Deck()
+        {
             deckOfCards = new Card[NUMBER_OF_CARDS];
             currentCard = 0;
             r = new Random();
             for (int i = 0; i < NUMBER_OF_CARDS; i++)
                 deckOfCards[i] = new Card(faces[i % NUMBER_OF_CARDS_IN_SUIT], suits[i / NUMBER_OF_CARDS_IN_SUIT], (i % NUMBER_OF_CARDS_IN_SUIT) + 1);
+        }
+
+        /// <summary>
+        /// This Sort function creates a temporary Card[], and stores the 
+        /// cards from the original array into temp array one at a time.
+        /// 
+        /// We determine the storage location of the cards in the array
+        /// from their suit and their value. We need to subtract 1
+        /// from the equation since the values of the cards start at 1.
+        /// 
+        /// After moving over the 52 cards into their respective locations 
+        /// in the temporary array, we overwrite the deckOfCards with our temp.
+        /// 
+        /// This code would not work if there were multiple Deck's of Cards.
+        /// If multiple deck's were implemented, we could use the sort function 
+        /// that is already for int arrays, and sort the Card[] based on the cards' value.
+        /// 
+        /// I do believe the following code is quicker than sorting by value.
+        /// That is, however, not tested.
+        /// </summary>
+        public void Sort()
+        {
+            currentCard = 0;
+            Card[] tempDeckOfCards = new Card[NUMBER_OF_CARDS];
+            for (int i = 0; i<NUMBER_OF_CARDS; i++)
+                tempDeckOfCards[((Array.IndexOf(suits, deckOfCards[i].suit) * NUMBER_OF_CARDS_IN_SUIT) + deckOfCards[i].value) - 1] = deckOfCards[i];
+            deckOfCards = tempDeckOfCards;
         }
 
         /// <summary>
