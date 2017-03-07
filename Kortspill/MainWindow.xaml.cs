@@ -39,7 +39,7 @@ namespace Kortspill
         private void sortButton_Click(object sender, RoutedEventArgs e)
         {
             // Sorts the deck, arranging the cards by value and color. Ace (1) -> King (13).
-            deck = new Deck();
+            deck.Sort();
             removeText();
         }
 
