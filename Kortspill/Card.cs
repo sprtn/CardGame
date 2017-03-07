@@ -26,6 +26,10 @@
         /// <summary>
         /// The Constructor function of the Card class. 
         /// Sets the card's variables to the input values.
+        /// 
+        /// Also wanted to add a string value where the 
+        /// filepath for the image of the Card was input into
+        /// the constructor.
         /// </summary>
         /// <param name="cardFace"></param>
         /// <param name="cardSuit"></param>

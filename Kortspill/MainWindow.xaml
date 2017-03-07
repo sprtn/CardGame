@@ -45,15 +45,18 @@
                  TextWrapping="Wrap"
                  VerticalAlignment="Top"
                  Width="497" />
-        
-        <Image x:Name="Card"
-               HorizontalAlignment="Left"
-               Height="100"
-               Margin="400,76,0,0"
-               VerticalAlignment="Top"
-               Width="71"
-               Visibility="Visible"
-               Source="Cards/AceClubs.png" />
+        <Viewbox Margin="347,21,10,101">
+            <Border BorderThickness="1"
+                    BorderBrush="Chocolate">
+                <Image x:Name="Card"
+                       HorizontalAlignment="Left"
+                       Height="101"
+                       VerticalAlignment="Top"
+                       Width="71"
+                       Visibility="Visible"
+                       Source="Cards/AceSpades.png" />
+            </Border>
+        </Viewbox>
 
     </Grid>
 </Window>

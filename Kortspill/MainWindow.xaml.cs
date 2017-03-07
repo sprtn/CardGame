@@ -67,14 +67,13 @@ namespace Kortspill
             if (currentCard != null)
             {
                 CardsBox.AppendText(currentCard.ToString() + Environment.NewLine);
-                CardsBox.ScrollToEnd();
             }
             else
             {
                 CardsBox.AppendText("You are out of cards. Please sort or shuffle.");
                 CanPullCards(false);
-                CardsBox.ScrollToEnd();
             }
+            CardsBox.ScrollToEnd();
         }
 
         private void CanPullCards(bool v)
