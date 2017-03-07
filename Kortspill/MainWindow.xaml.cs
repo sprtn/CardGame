@@ -13,6 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
+/// <summary>
+/// TBD:
+/// 
+/// Unit Testing
+/// Bilder for alle kort
+/// </summary>
+
 namespace Kortspill
 
 {
