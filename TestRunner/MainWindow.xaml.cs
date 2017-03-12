@@ -36,6 +36,8 @@ namespace TestRunner
             _results.Add(testClass.DeckContains52Cards());
             _results.Add(testClass.PullAllCards());
             _results.Add(testClass.DoesDeckShuffle());
+            _results.Add(testClass.DoesDeckSort());
+            _results.Add(testClass.CorrectOrder());
         }
     }
 }

@@ -10,6 +10,3 @@ Sort cards in deck
 Correct order:
 	Cards: Ace through King
 	Suits: Hearts, Diamonds, Clubs and Spades
-
-Buttons:
-Add Card (?), Sort, Shuffle, Draw Card.

@@ -14,7 +14,7 @@ namespace Kortspill
         /// Defining all the possible faces of the cards 
         /// in a string array, Ace through King.
         /// </summary>
-        string[] faces =
+        public string[] faces =
         {
             "Ace",
             "Two",
@@ -34,7 +34,7 @@ namespace Kortspill
         /// <summary>
         /// Defining all suits in a deck of cards.
         /// </summary>
-        string[] suits = {
+        public string[] suits = {
             "Hearts",
             "Diamonds",
             "Spades",
