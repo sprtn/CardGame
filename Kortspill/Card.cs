@@ -41,6 +41,13 @@
             value = cardValue;
         }
 
+        public Card ()
+        {
+            face = null;
+            suit = null;
+            value = 0;
+        }
+
         /// <summary>
         /// Overrides the ToString method to something useable for
         /// us, when checking which card we are pulling out of the deck..
@@ -48,7 +55,10 @@
         /// <returns></returns>
         public override string ToString()
         {
-            return face + " of " + suit + " with a value of " + value;
+            if (face != null && suit != null && value != 0)
+                return face + " of " + suit + " with a value of " + value;
+            else
+                return "Not a valid card.";
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,21 @@ namespace TestRunner
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ObservableCollection<TestingLib.TestTheCards.UnitTestInfo> _results = new 
+            ObservableCollection<TestingLib.TestTheCards.UnitTestInfo>();
+
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = _results;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var testClass = new TestingLib.TestTheCards();
+            _results.Add(testClass.DeckContains52Cards());
+            _results.Add(testClass.PullAllCards());
+            _results.Add(testClass.DoesDeckShuffle());
         }
     }
 }

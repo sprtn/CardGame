@@ -1,6 +1,4 @@
-﻿Create deck of cards
-	Array of cards containing 52 unique cards.
-Contains one or more decks of cards
+﻿Contains one or more decks of cards
 	number of cards % 52 == 0
 Pull card from deck
 	When all the cards are pulled, you should not be able to keep pulling cards.

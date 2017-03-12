@@ -6,10 +6,9 @@ namespace Kortspill
     {
         private Card[] deckOfCards;
         private int currentCard;
-        private const int 
+        public const int 
             NUMBER_OF_CARDS = 52, 
             NUMBER_OF_CARDS_IN_SUIT = 13;
-        private Random r;
 
         /// <summary>
         /// Defining all the possible faces of the cards 
@@ -60,7 +59,6 @@ namespace Kortspill
         {
             deckOfCards = new Card[NUMBER_OF_CARDS];
             currentCard = 0;
-            r = new Random();
             for (int i = 0; i < NUMBER_OF_CARDS; i++)
                 deckOfCards[i] = new Card(faces[i % NUMBER_OF_CARDS_IN_SUIT], suits[i / NUMBER_OF_CARDS_IN_SUIT], (i % NUMBER_OF_CARDS_IN_SUIT) + 1);
         }
@@ -104,6 +102,7 @@ namespace Kortspill
             currentCard = 0;
             for (int first = 0; first < deckOfCards.Length; first++)
             {
+                Random r = new Random();
                 int second = r.Next(NUMBER_OF_CARDS);
                 Card temp = deckOfCards[first];
                 deckOfCards[first] = deckOfCards[second];
