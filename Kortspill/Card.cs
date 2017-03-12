@@ -1,6 +1,8 @@
 ﻿namespace Kortspill
 {
-
+    /// <summary>
+    /// The Card class
+    /// </summary>
     public class Card
     {
         /// <summary>
@@ -39,13 +41,6 @@
             face = cardFace;
             suit = cardSuit;
             value = cardValue;
-        }
-
-        public Card ()
-        {
-            face = null;
-            suit = null;
-            value = 0;
         }
 
         /// <summary>

@@ -1,11 +1,16 @@
 ﻿using Kortspill;
-using System;
 
 namespace TestingLib
 {
+    /// <summary>
+    /// Our test-method library
+    /// </summary>
     public class TestTheCards
     {
-
+        /// <summary>
+        /// Checks that the amount of cards in the deck is correct.
+        /// </summary>
+        /// <returns></returns>
         public UnitTestInfo DeckContains52Cards()
         {
             var TestInfo = new UnitTestInfo();
@@ -13,9 +18,7 @@ namespace TestingLib
             int numCardsInDeck = d.DeckOfCards.Length;
 
             if (numCardsInDeck % 52 == 0)
-            {
                 TestInfo.DidTestPass = true;
-            }
             else
             {
                 TestInfo.DidTestPass = false;
@@ -25,19 +28,21 @@ namespace TestingLib
             return TestInfo;
         }
 
+        /// <summary>
+        /// Checks that all cards can be pulled from the stack
+        /// and that they are assigned properties.
+        /// </summary>
+        /// <returns></returns>
         public UnitTestInfo PullAllCards()
         {
             var TestInfo = new UnitTestInfo();
             var d = new Deck();
-            Card curCard = new Card();
 
             for (int i = 0; i < d.DeckOfCards.Length; i++)
             {
-                curCard = d.DealCard();
-                if (curCard.ToString() != "")
-                {
+                Card curCard = d.DealCard();
+                if (curCard.ToString() != "" && curCard != null)
                     TestInfo.DidTestPass = true;
-                }
                 else
                 {
                     TestInfo.DidTestPass = false;
@@ -49,6 +54,10 @@ namespace TestingLib
             return TestInfo;
         }
 
+        /// <summary>
+        /// Checks that the deck shuffles.
+        /// </summary>
+        /// <returns></returns>
         public UnitTestInfo DoesDeckShuffle()
         {
             int testsToBeRan = 100;
@@ -78,6 +87,11 @@ namespace TestingLib
             return TestInfo;
         }
 
+        /// <summary>
+        /// Checks that the deck sorts properly 
+        /// after being shuffled
+        /// </summary>
+        /// <returns></returns>
         public UnitTestInfo DoesDeckSort()
         {
             int testsToBeRan = 10;
@@ -106,6 +120,12 @@ namespace TestingLib
             return testInfo;
         }
 
+        /// <summary>
+        /// Checks that all the cards are in their
+        /// intended position in the stack, first
+        /// for a new deck and then for a sorted stack.
+        /// </summary>
+        /// <returns></returns>
         public UnitTestInfo CorrectOrder()
         {
             Deck testDeck = new Deck();
@@ -122,6 +142,15 @@ namespace TestingLib
             return testInfo;
         }
 
+        /// <summary>
+        /// Method used in CorrectOrder.
+        /// Checks that the input deck is sorted
+        /// in the correct order.
+        /// </summary>
+        /// <param name="testDeck"> This is the deck to be checked </param>
+        /// <param name="testInfo"> This is being updated if the test fails </param>
+        /// <param name="errorMessage"> The error message to be input into testInfo </param>
+        /// <returns></returns>
         private static UnitTestInfo CheckOrderOfCards(Deck testDeck, UnitTestInfo testInfo, string errorMessage)
         {
             for (int i = 0; i < testDeck.DeckOfCards.Length; i++)
@@ -136,6 +165,10 @@ namespace TestingLib
             return testInfo;
         }
 
+        /// <summary>
+        /// A struct for inputting values into. This is
+        /// used to show the results from the tests.
+        /// </summary>
         public struct UnitTestInfo
         {
             public bool DidTestPass { get; set; }
