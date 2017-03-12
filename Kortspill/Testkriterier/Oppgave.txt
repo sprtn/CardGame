@@ -1,0 +1,17 @@
+﻿Create deck of cards
+	Array of cards containing 52 unique cards.
+Contains one or more decks of cards
+	number of cards % 52 == 0
+Pull card from deck
+	When all the cards are pulled, you should not be able to keep pulling cards.
+Shuffle cards in deck
+	Shuffling needs to be randomized.
+Sort cards in deck
+	Places cards back into correct order.
+
+Correct order:
+	Cards: Ace through King
+	Suits: Hearts, Diamonds, Clubs and Spades
+
+Buttons:
+Add Card (?), Sort, Shuffle, Draw Card.

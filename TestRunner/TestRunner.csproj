@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6B47D1C4-93A2-4D20-A659-2A8BE9C6CB47}</ProjectGuid>
+    <ProjectGuid>{A50A7F84-A8D1-4F7D-946E-753409BBB3A3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Kortspill</RootNamespace>
-    <AssemblyName>Kortspill</AssemblyName>
+    <RootNamespace>TestRunner</RootNamespace>
+    <AssemblyName>TestRunner</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -63,8 +63,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Card.cs" />
-    <Compile Include="Deck.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -98,13 +96,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Cards\AceClubs.png" />
-    <Resource Include="Cards\AceDiamonds.png" />
-    <Resource Include="Cards\AceHearts.png" />
-    <Resource Include="Cards\AceSpades.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Testkriterier\Oppgave.txt" />
+    <ProjectReference Include="..\TestingLib\TestingLib.csproj">
+      <Project>{e79d6d37-237e-447f-8863-1efba16db2d8}</Project>
+      <Name>TestingLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

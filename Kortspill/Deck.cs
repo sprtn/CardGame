@@ -2,7 +2,7 @@
 
 namespace Kortspill
 {
-    class Deck
+    public class Deck
     {
         private Card[] deckOfCards;
         private int currentCard;
@@ -17,30 +17,38 @@ namespace Kortspill
         /// </summary>
         string[] faces =
         {
-                "Ace",
-                "Two",
-                "Three",
-                "Four",
-                "Five",
-                "Six",
-                "Seven",
-                "Eight",
-                "Nine",
-                "Ten",
-                "Jack",
-                "Queen",
-                "King"
-            };
+            "Ace",
+            "Two",
+            "Three",
+            "Four",
+            "Five",
+            "Six",
+            "Seven",
+            "Eight",
+            "Nine",
+            "Ten",
+            "Jack",
+            "Queen",
+            "King"
+        };
 
         /// <summary>
         /// Defining all suits in a deck of cards.
         /// </summary>
         string[] suits = {
-                "Hearts",
-                "Diamonds",
-                "Spades",
-                "Clubs"
-            };
+            "Hearts",
+            "Diamonds",
+            "Spades",
+            "Clubs"
+        };
+
+        public Card[] DeckOfCards
+        {
+            get
+            {
+                return deckOfCards;
+            }
+        }
 
         /// <summary>
         /// Constructor for Deck class. Creates a card array containing NUMBER_OF_CARDS cards.
