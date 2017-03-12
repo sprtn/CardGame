@@ -61,9 +61,7 @@ namespace Kortspill
         private void writeToCardBox(Card currentCard)
         {
             if (currentCard != null)
-            {
                 CardsBox.AppendText(currentCard.ToString() + Environment.NewLine);
-            }
             else
             {
                 CardsBox.AppendText("You are out of cards. Please sort or shuffle.");

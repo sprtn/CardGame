@@ -41,6 +41,11 @@ namespace Kortspill
             "Clubs"
         };
 
+        /// <summary>
+        /// A getter for the deckOfCards of the Deck.
+        /// Returns the deckOfCards Card[] belonging
+        /// to this Deck.
+        /// </summary>
         public Card[] DeckOfCards
         {
             get
@@ -100,13 +105,13 @@ namespace Kortspill
         public void Shuffle()
         {
             currentCard = 0;
-            for (int first = 0; first < deckOfCards.Length; first++)
+            for (int current = 0; current < deckOfCards.Length; current++)
             {
                 Random r = new Random();
-                int second = r.Next(NUMBER_OF_CARDS);
-                Card temp = deckOfCards[first];
-                deckOfCards[first] = deckOfCards[second];
-                deckOfCards[second] = temp;
+                int next = r.Next(NUMBER_OF_CARDS);
+                Card tempCard = deckOfCards[current];
+                deckOfCards[current] = deckOfCards[next];
+                deckOfCards[next] = tempCard;
             }
         }
 
