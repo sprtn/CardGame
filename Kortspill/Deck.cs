@@ -165,9 +165,9 @@ namespace Kortspill
         public void Shuffle()
         {
             currentCard = 0;
+            Random r = new Random();
             for (int current = 0; current < deckOfCards.Length; current++)
             {
-                Random r = new Random();
                 int next = r.Next(NUMBER_OF_CARDS);
                 Card tempCard = deckOfCards[current];
                 deckOfCards[current] = deckOfCards[next];
