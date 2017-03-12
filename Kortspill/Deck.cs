@@ -172,6 +172,7 @@ namespace Kortspill
                 Card tempCard = deckOfCards[current];
                 deckOfCards[current] = deckOfCards[next];
                 deckOfCards[next] = tempCard;
+                r = new Random();
             }
         }
 

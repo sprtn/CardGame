@@ -13,7 +13,7 @@ namespace TestRunner
         /// of the tests using the TestTheCards class methods, showing
         /// the UnitTestInfo structs from that class in an Observable Collection.
         /// </summary>
-        private ObservableCollection<TestingLib.TestTheCards.UnitTestInfo> _results = new 
+        private ObservableCollection<TestingLib.TestTheCards.UnitTestInfo> _results = new
             ObservableCollection<TestingLib.TestTheCards.UnitTestInfo>();
 
         public MainWindow()
@@ -24,6 +24,7 @@ namespace TestRunner
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            _results.Clear();
             var testClass = new TestingLib.TestTheCards();
             _results.Add(testClass.DeckContains52Cards());
             _results.Add(testClass.PullAllCards());
