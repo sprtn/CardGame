@@ -60,12 +60,13 @@ namespace TestingLib
         /// <returns></returns>
         public UnitTestInfo DoesDeckShuffle()
         {
-            int testsToBeRan = 100;
+            int testsToBeRan = 1000;
             var TestInfo = new UnitTestInfo();
             Deck testDeck = new Deck();
 
             string[] oldDeck = new string[testDeck.DeckOfCards.Length];
             int similarities = 0;
+            int closeOnes = 0;
 
             for (int i = 0; i < testsToBeRan; i++)
             {
@@ -73,16 +74,24 @@ namespace TestingLib
                     oldDeck[y] = testDeck.DeckOfCards[y].ToString();
                 testDeck.Shuffle();
                 for (int y = 0; y < testDeck.DeckOfCards.Length; y++)
+                {
                     if (testDeck.DeckOfCards[y].ToString() == oldDeck[y])
                         similarities++;
+                    if (y > 0)
+                        if (testDeck.DeckOfCards[y].ToString() == oldDeck[y - 1])
+                            closeOnes++;
+                    if (y < testDeck.DeckOfCards.Length - 1)
+                        if (testDeck.DeckOfCards[y].ToString() == oldDeck[y + 1])
+                            closeOnes++;
+                }
+                    
+
             }
-            if (similarities < 10)
+            if (similarities < ((testsToBeRan * 52) / 13) && closeOnes < (testsToBeRan * 5))
                 TestInfo.DidTestPass = true;
             else
-            {
                 TestInfo.DidTestPass = false;
-                TestInfo.TestFailureMessage = $"After running through {testsToBeRan} tests, we found {similarities} of the same cards in the same locations after shuffling.";
-            }
+            TestInfo.TestFailureMessage = $"{testsToBeRan * 52} cards tested, {similarities} similarities, {closeOnes} close cards.";
             TestInfo.MethodName = "DoesDeckShuffle()";
             return TestInfo;
         }
