@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
-
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 /// <summary>
 /// TBD:
@@ -50,6 +51,8 @@ namespace Kortspill
         {
             // Pulls out the topmost card and takes it out of the stack
             currentCard = deck.DealCard();
+            if (currentCard != null)
+                Card.Source = (ImageSource) new BitmapImage(currentCard.path);
             writeToCardBox(currentCard);
         }
 
@@ -95,6 +98,7 @@ namespace Kortspill
         private void removeText()
         {
             CardsBox.Text = null;
+            Card.Source = null;
             CanPullCards(true);
         }
     }

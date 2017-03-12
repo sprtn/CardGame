@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Windows.Media;
 
 namespace Kortspill
 {
@@ -34,11 +36,69 @@ namespace Kortspill
         /// <summary>
         /// Defining all suits in a deck of cards.
         /// </summary>
-        public string[] suits = {
+        public string[] suits = 
+        {
             "Hearts",
             "Diamonds",
             "Spades",
             "Clubs"
+        };
+
+
+        private Uri[] imgPaths =
+        {
+            new Uri("Cards/ace_of_hearts.png", UriKind.Relative),
+            new Uri("Cards/2_of_hearts.png", UriKind.Relative),
+            new Uri("Cards/3_of_hearts.png", UriKind.Relative),
+            new Uri("Cards/4_of_hearts.png", UriKind.Relative),
+            new Uri("Cards/5_of_hearts.png", UriKind.Relative),
+            new Uri("Cards/6_of_hearts.png", UriKind.Relative),
+            new Uri("Cards/7_of_hearts.png", UriKind.Relative),
+            new Uri("Cards/8_of_hearts.png", UriKind.Relative),
+            new Uri("Cards/9_of_hearts.png", UriKind.Relative),
+            new Uri("Cards/10_of_hearts.png", UriKind.Relative),
+            new Uri("Cards/jack_of_hearts.png", UriKind.Relative),
+            new Uri("Cards/queen_of_hearts.png", UriKind.Relative),
+            new Uri("Cards/king_of_hearts.png", UriKind.Relative),
+            new Uri("Cards/ace_of_diamonds.png", UriKind.Relative),
+            new Uri("Cards/2_of_diamonds.png", UriKind.Relative),
+            new Uri("Cards/3_of_diamonds.png", UriKind.Relative),
+            new Uri("Cards/4_of_diamonds.png", UriKind.Relative),
+            new Uri("Cards/5_of_diamonds.png", UriKind.Relative),
+            new Uri("Cards/6_of_diamonds.png", UriKind.Relative),
+            new Uri("Cards/7_of_diamonds.png", UriKind.Relative),
+            new Uri("Cards/8_of_diamonds.png", UriKind.Relative),
+            new Uri("Cards/9_of_diamonds.png", UriKind.Relative),
+            new Uri("Cards/10_of_diamonds.png", UriKind.Relative),
+            new Uri("Cards/jack_of_diamonds.png", UriKind.Relative),
+            new Uri("Cards/queen_of_diamonds.png", UriKind.Relative),
+            new Uri("Cards/king_of_diamonds.png", UriKind.Relative),
+            new Uri("Cards/ace_of_spades.png", UriKind.Relative),
+            new Uri("Cards/2_of_spades.png", UriKind.Relative),
+            new Uri("Cards/3_of_spades.png", UriKind.Relative),
+            new Uri("Cards/4_of_spades.png", UriKind.Relative),
+            new Uri("Cards/5_of_spades.png", UriKind.Relative),
+            new Uri("Cards/6_of_spades.png", UriKind.Relative),
+            new Uri("Cards/7_of_spades.png", UriKind.Relative),
+            new Uri("Cards/8_of_spades.png", UriKind.Relative),
+            new Uri("Cards/9_of_spades.png", UriKind.Relative),
+            new Uri("Cards/10_of_spades.png", UriKind.Relative),
+            new Uri("Cards/jack_of_spades.png", UriKind.Relative),
+            new Uri("Cards/queen_of_spades.png", UriKind.Relative),
+            new Uri("Cards/king_of_spades.png", UriKind.Relative),
+            new Uri("Cards/ace_of_clubs.png", UriKind.Relative),
+            new Uri("Cards/2_of_clubs.png", UriKind.Relative),
+            new Uri("Cards/3_of_clubs.png", UriKind.Relative),
+            new Uri("Cards/4_of_clubs.png", UriKind.Relative),
+            new Uri("Cards/5_of_clubs.png", UriKind.Relative),
+            new Uri("Cards/6_of_clubs.png", UriKind.Relative),
+            new Uri("Cards/7_of_clubs.png", UriKind.Relative),
+            new Uri("Cards/8_of_clubs.png", UriKind.Relative),
+            new Uri("Cards/9_of_clubs.png", UriKind.Relative),
+            new Uri("Cards/10_of_clubs.png", UriKind.Relative),
+            new Uri("Cards/jack_of_clubs.png", UriKind.Relative),
+            new Uri("Cards/queen_of_clubs.png", UriKind.Relative),
+            new Uri("Cards/king_of_clubs.png", UriKind.Relative)
         };
 
         /// <summary>
@@ -65,7 +125,7 @@ namespace Kortspill
             deckOfCards = new Card[NUMBER_OF_CARDS];
             currentCard = 0;
             for (int i = 0; i < NUMBER_OF_CARDS; i++)
-                deckOfCards[i] = new Card(faces[i % NUMBER_OF_CARDS_IN_SUIT], suits[i / NUMBER_OF_CARDS_IN_SUIT], (i % NUMBER_OF_CARDS_IN_SUIT) + 1);
+                deckOfCards[i] = new Card(faces[i % NUMBER_OF_CARDS_IN_SUIT], suits[i / NUMBER_OF_CARDS_IN_SUIT], (i % NUMBER_OF_CARDS_IN_SUIT) + 1, imgPaths[i]);
         }
 
         /// <summary>

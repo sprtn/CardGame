@@ -53,8 +53,11 @@
                        Height="101"
                        VerticalAlignment="Top"
                        Width="71"
-                       Visibility="Visible"
-                       Source="Cards/AceSpades.png" />
+                       Visibility="Visible">
+                    <Image.Source>
+                        <BitmapImage UriSource="" />
+                    </Image.Source>
+                </Image>
             </Border>
         </Viewbox>
 

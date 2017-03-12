@@ -1,4 +1,6 @@
-﻿namespace Kortspill
+﻿using System;
+
+namespace Kortspill
 {
     /// <summary>
     /// The Card class
@@ -23,7 +25,7 @@
         /// <summary>
         /// The filepath to the card's image
         /// </summary>
-        public string imgPath;
+        public Uri path;
 
         /// <summary>
         /// The Constructor function of the Card class. 
@@ -36,11 +38,12 @@
         /// <param name="cardFace"></param>
         /// <param name="cardSuit"></param>
         /// <param name="cardValue"></param>
-        public Card (string cardFace, string cardSuit, int cardValue)
+        public Card (string cardFace, string cardSuit, int cardValue, Uri imgPath)
         {
             face = cardFace;
             suit = cardSuit;
             value = cardValue;
+            path = imgPath;
         }
 
         /// <summary>
