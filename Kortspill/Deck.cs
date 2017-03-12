@@ -46,6 +46,12 @@ namespace Kortspill
                 "Clubs"
             };
 
+        /// <summary>
+        /// Constructor for Deck class. Creates a card array containing NUMBER_OF_CARDS cards.
+        /// The for-statement places new Cards into the deckOfCards, using some simple logic
+        /// to create every single card in the correct order (Ace through King, Hearts through Clubs)
+        /// To change the order of the suits, simply alter the order of the suits in the suits string-array above.
+        /// </summary>
         public Deck()
         {
             deckOfCards = new Card[NUMBER_OF_CARDS];
